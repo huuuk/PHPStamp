@@ -45,4 +45,14 @@ class Result
             exit;
         }
     }
+
+     public function save($fullPath)
+    {
+        if (copy($this->document->getDocumentPath(), $fullPath) === true) {
+            $zip = new \ZipArchive();
+            $zip->open($fullPath);
+            $zip->addFromString($this->document->getContentPath(), $this->output->saveXML());
+            return $zip->close();
+        }
+    }
 } 
