@@ -7,7 +7,7 @@ use PHPStamp\Extension\Extension;
 use PHPStamp\Processor;
 use PHPStamp\XMLHelper;
 
-class ListItem extends Extension
+class Listitem extends Extension
 {
     /**
      * @inherit
